@@ -20,14 +20,36 @@ public class App
 
     Scanner scanner = new Scanner (System.in);
         TestCalculator.displayMenu();
-        System.out.println(" Enter number1: ");
+        System.out.println(" Enter operation type (+ , -)");
+        char operationType = scanner.next().charAt(0);
+        switch (operationType){
+            case '+':
+                System.out.println(" Enter number1: ");
+                double n1 = scanner.nextInt();
+                System.out.println("Enter number2: ");
+                double n2 = scanner.nextInt();
+                double result = TestCalculator.addition(n1,n2);
+                System.out.println(result);
+                break;
+            case '-':
+                break;
+
+            default:
+                System.out.println("operation type is not valid!");
+
+        }
+
+
+
+
+        /*System.out.println(" Enter number1: ");
         double n1 = scanner.nextInt();
         System.out.println("Enter number2: ");
         double n2 = scanner.nextInt();
         double result = TestCalculator.addition(n1,n2);
         System.out.println(result);
 
-
+*/
 
 
 
