@@ -19,23 +19,40 @@ public class App
         */
 
     Scanner scanner = new Scanner (System.in);
+    boolean condition = true;
+    while (condition){
+
         TestCalculator.displayMenu();
         System.out.println(" Enter operation type (+ , -)");
         char operationType = scanner.next().charAt(0);
+        System.out.println(" Enter number1: ");
+        double n1 = scanner.nextInt();
+        System.out.println("Enter number2: ");
+        double n2 = scanner.nextInt();
+
         switch (operationType){
             case '+':
-                System.out.println(" Enter number1: ");
-                double n1 = scanner.nextInt();
-                System.out.println("Enter number2: ");
-                double n2 = scanner.nextInt();
+
                 double result = TestCalculator.addition(n1,n2);
                 System.out.println(result);
                 break;
+
             case '-':
+
+                System.out.println(TestCalculator.subtraction(n1,n2));
                 break;
 
             default:
                 System.out.println("operation type is not valid!");
+    }
+        System.out.println(" if you want to continue? yes or no : ");
+        String continueOperation = scanner.next();
+        if(continueOperation.equalsIgnoreCase(" no")) {
+            condition = false;
+
+        }
+
+
 
         }
 
